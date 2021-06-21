@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>tính khoảng cách các vector</title>
+</head>
+
+<body>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D1</span>
+        <input type="text" class="form-control" id="d1"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D2</span>
+        <input type="text" class="form-control" id="d2"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D3</span>
+        <input type="text" class="form-control" id="d3"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D4</span>
+        <input type="text" class="form-control" id="d4"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Q</span>
+        <input type="text" class="form-control" id="q"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="d-grid gap-2 d-md-block">
+        <!-- //<button type="button" class="btn btn-primary" onClick="">Tính</button> -->
+        <input type="submit" value="Tính" class="btn btn-primary" onClick="onlick()">
+    </div>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+
+
+    <script>
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        var d3 = document.getElementById("d3");
+        var d4 = document.getElementById("d4");
+        var q = document.getElementById("q");
+
+
+        function onlick() {
+
+            d1x = d1.value.split(",");
+            d2x = d2.value.split(",");
+            d3x = d3.value.split(",");
+            d4x = d4.value.split(",");
+            qx = q.value.split(",");
+            rs1 = tinh(d1x, qx);
+            document.getElementById("result1").innerHTML = "d1:  " + rs1;
+            rs2 = tinh(d2x, qx);
+            document.getElementById("result2").innerHTML = "d2:  " + rs2;
+            rs3 = tinh(d3x, qx);
+            document.getElementById("result3").innerHTML = "d3:  " + rs3;
+            rs4 = tinh(d4x, qx);
+            document.getElementById("result4").innerHTML = "d4:  " + rs4;
+
+            var a = [rs1, rs2, rs3, rs4].sort();
+            alert(a[3]);
+
+
+
+        }
+        function tinh(d1x, qx) {
+            var i = 0;
+            var sum = 0
+            var mau1 = 0
+            var mau2 = 0
+            while (i < 5) {
+                sum += (parseFloat(d1x[i]) * parseFloat(qx[i]));
+                i++;
+            }
+            i = 0;
+            while (i < 5) {
+                mau1 += qx[i] * qx[i];
+                i++;
+            }
+            i = 0;
+            while (i < 5) {
+                mau2 += d1x[i] * d1x[i];
+                i++;
+            }
+            mau1 = Math.sqrt(mau1);
+            mau2 = Math.sqrt(mau2);
+
+            // alert((Math.round(sum * 100) / 100) / ((Math.round(mau1 * 100) / 100) * (Math.round(mau2 * 100) / 100)));
+            // alert((Math.round(sum * 100) / 100));
+            // alert((Math.round(mau1 * 100) / 100));
+            // alert((Math.round(mau2 * 100) / 100));
+            return (Math.round(sum * 100) / 100) / ((Math.round(mau1 * 100) / 100) * (Math.round(mau2 * 100) / 100));
+        }
+    </script>
+
+</body>
+
+</html>
