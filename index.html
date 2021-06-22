@@ -34,6 +34,26 @@
             placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
     </div>
     <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D5</span>
+        <input type="text" class="form-control" id="d5"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D6</span>
+        <input type="text" class="form-control" id="d6"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D7</span>
+        <input type="text" class="form-control" id="d7"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">D8</span>
+        <input type="text" class="form-control" id="d8"
+            placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
+    </div>
+    <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Q</span>
         <input type="text" class="form-control" id="q"
             placeholder="nhập giá trị cách nhau bởi dấu ',' -----Ví dụ: 0.1,0.2,.....">
@@ -46,6 +66,10 @@
     <p id="result2"></p>
     <p id="result3"></p>
     <p id="result4"></p>
+    <p id="result5"></p>
+    <p id="result6"></p>
+    <p id="result7"></p>
+    <p id="result8"></p>
 
 
     <script>
@@ -53,6 +77,10 @@
         var d2 = document.getElementById("d2");
         var d3 = document.getElementById("d3");
         var d4 = document.getElementById("d4");
+        var d5 = document.getElementById("d5");
+        var d6 = document.getElementById("d6");
+        var d7 = document.getElementById("d7");
+        var d8 = document.getElementById("d8");
         var q = document.getElementById("q");
 
 
@@ -62,6 +90,11 @@
             d2x = d2.value.split(",");
             d3x = d3.value.split(",");
             d4x = d4.value.split(",");
+            d5x = d5.value.split(",");
+            d6x = d6.value.split(",");
+            d7x = d7.value.split(",");
+            d8x = d8.value.split(",");
+            // d4x = d4.value.split(",");
             qx = q.value.split(",");
             rs1 = tinh(d1x, qx);
             document.getElementById("result1").innerHTML = "d1:  " + rs1;
@@ -71,8 +104,18 @@
             document.getElementById("result3").innerHTML = "d3:  " + rs3;
             rs4 = tinh(d4x, qx);
             document.getElementById("result4").innerHTML = "d4:  " + rs4;
+            rs5 = tinh(d5x, qx);
+            document.getElementById("result5").innerHTML = "d5:  " + rs5;
+            rs6 = tinh(d6x, qx);
+            document.getElementById("result6").innerHTML = "d6:  " + rs6;
+            rs7 = tinh(d7x, qx);
+            document.getElementById("result7").innerHTML = "d7:  " + rs7;
+            rs8 = tinh(d8x, qx);
+            document.getElementById("result8").innerHTML = "d8:  " + rs8;
 
-           
+            // var a = [rs1, rs2, rs3, rs4].sort();
+
+
 
 
         }
@@ -98,10 +141,7 @@
             mau1 = Math.sqrt(mau1);
             mau2 = Math.sqrt(mau2);
 
-            // alert((Math.round(sum * 100) / 100) / ((Math.round(mau1 * 100) / 100) * (Math.round(mau2 * 100) / 100)));
-            // alert((Math.round(sum * 100) / 100));
-            // alert((Math.round(mau1 * 100) / 100));
-            // alert((Math.round(mau2 * 100) / 100));
+
             return (Math.round(sum * 100) / 100) / ((Math.round(mau1 * 100) / 100) * (Math.round(mau2 * 100) / 100));
         }
     </script>
